@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+
+@theme {
+  --color-primary: #DC2626;
+  --color-primary-dull: #B91C1C;
+  --color-light: #F1F5F9;
+  --color-borderColor: #c4c7d2;
+}
+
+@keyframes welcomeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes welcomeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.animate-welcome-in {
+  animation: welcomeIn 0.55s ease-out forwards;
+}
+
+.animate-welcome-out {
+  animation: welcomeOut 0.7s ease-in forwards;
+}
