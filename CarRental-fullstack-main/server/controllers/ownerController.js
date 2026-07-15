@@ -29,26 +29,34 @@ export const addCar = async (req, res)=>{
             return res.json({ success: false, message: 'Image file is required' });
         }
 
-        // Upload Image to ImageKit
-        const fileBuffer = fs.readFileSync(imageFile.path)
-        const response = await imagekit.upload({
-            file: fileBuffer,
-            fileName: imageFile.originalname,
-            folder: '/cars'
+        let image = 'https://placehold.co/800x500/4f46e5/ffffff?text=Car+Image';
+
+        if (process.env.IMAGEKIT_PUBLIC_KEY && process.env.IMAGEKIT_PRIVATE_KEY && process.env.IMAGEKIT_URL_ENDPOINT) {
+            const fileBuffer = fs.readFileSync(imageFile.path)
+            const response = await imagekit.upload({
+                file: fileBuffer,
+                fileName: imageFile.originalname,
+                folder: '/cars'
+            })
+
+            image = imagekit.url({
+                path : response.filePath,
+                transformation : [
+                    {width: '1280'},
+                    {quality: 'auto'},
+                    { format: 'webp' }
+                ]
+            });
+        }
+
+        await Car.create({
+            ...car,
+            owner: _id,
+            image,
+            year: Number(car.year) || 0,
+            pricePerDay: Number(car.pricePerDay) || 0,
+            seating_capacity: Number(car.seating_capacity) || 0,
         })
-
-        // optimization through imagekit URL transformation
-        var optimizedImageUrl = imagekit.url({
-            path : response.filePath,
-            transformation : [
-                {width: '1280'}, // Width resizing
-                {quality: 'auto'}, // Auto compression
-                { format: 'webp' }  // Convert to modern format
-            ]
-        });
-
-        const image = optimizedImageUrl;
-        await Car.create({...car, owner: _id, image})
 
         res.json({success: true, message: "Car Added"})
 
