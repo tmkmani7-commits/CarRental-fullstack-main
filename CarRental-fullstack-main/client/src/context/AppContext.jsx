@@ -15,6 +15,7 @@ export const AppProvider = ({ children })=>{
     const [token, setToken] = useState(null)
     const [user, setUser] = useState(null)
     const [isOwner, setIsOwner] = useState(false)
+    const [isOwnerLoading, setIsOwnerLoading] = useState(true)
     const [showLogin, setShowLogin] = useState(false)
     const [pickupDate, setPickupDate] = useState('')
     const [returnDate, setReturnDate] = useState('')
@@ -29,10 +30,14 @@ export const AppProvider = ({ children })=>{
             setUser(data.user)
             setIsOwner(data.user.role === 'owner')
            }else{
+            setIsOwner(false)
             navigate('/')
            }
         } catch (error) {
+            setIsOwner(false)
             toast.error(error.message)
+        } finally {
+            setIsOwnerLoading(false)
         }
     }
     // Function to fetch all cars from the server
@@ -52,6 +57,7 @@ export const AppProvider = ({ children })=>{
         setToken(null)
         setUser(null)
         setIsOwner(false)
+        setIsOwnerLoading(false)
         axios.defaults.headers.common['Authorization'] = ''
         toast.success('You have been logged out')
         navigate('/')
@@ -60,22 +66,27 @@ export const AppProvider = ({ children })=>{
 
     // useEffect to retrieve the token from localStorage
     useEffect(()=>{
-        const token = localStorage.getItem('token')
-        setToken(token)
+        const savedToken = localStorage.getItem('token')
+        setToken(savedToken)
         fetchCars()
     },[])
 
     // useEffect to fetch user data when token is available
     useEffect(()=>{
         if(token){
+            setIsOwnerLoading(true)
             axios.defaults.headers.common['Authorization'] = `${token}`
             fetchUser()
+        } else {
+            setIsOwnerLoading(false)
+            setUser(null)
+            setIsOwner(false)
         }
     },[token])
 
     const value = {
         navigate, currency, axios, user, setUser,
-        token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logout, fetchCars, cars, setCars, 
+        token, setToken, isOwner, setIsOwner, isOwnerLoading, fetchUser, showLogin, setShowLogin, logout, fetchCars, cars, setCars, 
         pickupDate, setPickupDate, returnDate, setReturnDate
     }
 

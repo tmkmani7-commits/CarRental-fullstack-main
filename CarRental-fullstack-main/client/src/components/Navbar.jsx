@@ -18,7 +18,9 @@ const Navbar = () => {
             const { data } = await axios.post('/api/owner/change-role')
             if (data.success) {
                 setIsOwner(true)
+                setUser(prev => prev ? {...prev, role: 'owner'} : prev)
                 toast.success(data.message)
+                navigate('/owner')
             }else{
                 toast.error(data.message)
             }

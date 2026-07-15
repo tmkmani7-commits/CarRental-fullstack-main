@@ -1,8 +1,36 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
+import { useNavigate } from 'react-router-dom'
+import { useAppContext } from '../context/AppContext'
 
 const Banner = () => {
+  const navigate = useNavigate()
+  const { user, isOwner, setIsOwner, setShowLogin, axios } = useAppContext()
+
+  const handleListCar = async () => {
+    if (!user) {
+      setShowLogin(true)
+      return
+    }
+
+    if (isOwner) {
+      navigate('/owner/add-car')
+      return
+    }
+
+    try {
+      const { data } = await axios.post('/api/owner/change-role')
+      if (data.success) {
+        setIsOwner(true)
+        setUser(prev => prev ? {...prev, role: 'owner'} : prev)
+        navigate('/owner/add-car')
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <motion.div 
     initial={{ opacity: 0, y: 50 }}
@@ -18,6 +46,7 @@ const Banner = () => {
             <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleListCar}
             className='px-6 py-2 bg-white hover:bg-slate-100 transition-all text-primary rounded-lg text-sm mt-4 cursor-pointer'>List your car</motion.button>
         </div>
 

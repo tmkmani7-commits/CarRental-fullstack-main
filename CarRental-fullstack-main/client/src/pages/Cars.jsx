@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 import { assets, dummyCarData } from '../assets/assets'
 import CarCard from '../components/CarCard'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
 import { motion } from 'motion/react'
@@ -57,6 +57,12 @@ const Cars = () => {
     cars.length > 0 && !isSearchData && applyFilter()
   },[input, cars])
 
+  const navigate = useNavigate()
+
+  const handleListCar = () => {
+    navigate('/owner/add-car')
+  }
+
   return (
     <div>
 
@@ -100,6 +106,10 @@ const Cars = () => {
               <CarCard car={car}/>
             </motion.div>
           ))}
+        </div>
+
+        <div className='flex justify-center mt-12'>
+          <button onClick={handleListCar} className='px-8 py-3 rounded-full bg-primary text-white text-sm font-semibold transition hover:bg-primary-dull'>List Your Car</button>
         </div>
       </motion.div>
 
