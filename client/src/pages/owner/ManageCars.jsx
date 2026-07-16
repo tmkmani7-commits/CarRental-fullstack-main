@@ -1,12 +1,15 @@
+// client/src/pages/owner/ManageCars.jsx
 import React, { useEffect, useState } from 'react'
 import { assets} from '../../assets/assets'
 import Title from '../../components/owner/Title'
 import { useAppContext } from '../../context/AppContext'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const ManageCars = () => {
 
   const {isOwner, axios, currency} = useAppContext()
+  const navigate = useNavigate()
 
   const [cars, setCars] = useState([])
 
@@ -62,8 +65,15 @@ const ManageCars = () => {
 
   return (
     <div className='px-4 pt-10 md:px-10 w-full'>
-      
-      <Title title="Manage Cars" subTitle="View all listed cars, update their details, or remove them from the booking platform."/>
+
+      <div className='flex items-center justify-between max-w-3xl'>
+        <Title title="Manage Cars" subTitle="View all listed cars, update their details, or remove them from the booking platform."/>
+
+        <button onClick={()=> navigate('/owner/add-car')} className='flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary-dull text-white rounded-lg cursor-pointer transition-all h-max'>
+          <img src={assets.addIcon} alt="" className='h-4 invert'/>
+          List Car
+        </button>
+      </div>
 
       <div className='max-w-3xl w-full rounded-md overflow-hidden border border-borderColor mt-6'>
 

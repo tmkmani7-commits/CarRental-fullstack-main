@@ -199,8 +199,10 @@ Final result
 Your GitHub page will look like:
 
 🚗 Car Rental Booking System
-<img width="1892" height="850" alt="image" src="https://github.com/user-attachments/assets/9a7e0122-a188-4254-ba29-28f94231c586" />
 
+██████████████████████████
+        Banner Image
+██████████████████████████
 
 🟦 React  🟩 Node  🟩 MongoDB
 

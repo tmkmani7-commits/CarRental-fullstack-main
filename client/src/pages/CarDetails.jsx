@@ -1,3 +1,4 @@
+// client/src/pages/CarDetails.jsx
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { assets, dummyCarData } from '../assets/assets'
@@ -138,6 +139,16 @@ const CarDetails = () => {
               <label htmlFor="return-date">Return Date</label>
               <input value={returnDate} onChange={(e)=>setReturnDate(e.target.value)}
               type="date" className='border border-borderColor px-3 py-2 rounded-lg' required id='return-date'/>
+            </div>
+
+            <div className='flex flex-col gap-2'>
+              <label htmlFor="payment-option">Payment Option</label>
+              <select id='payment-option' defaultValue="cash" className='border border-borderColor px-3 py-2 rounded-lg text-gray-500'>
+                <option value="cash">Cash on Pickup</option>
+                <option value="card">Credit / Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="netbanking">Net Banking</option>
+              </select>
             </div>
 
             <button className='w-full bg-primary hover:bg-primary-dull transition-all py-3 font-medium text-white rounded-xl cursor-pointer'>Book Now</button>

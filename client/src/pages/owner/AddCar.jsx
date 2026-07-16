@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Title from '../../components/owner/Title'
 import { assets } from '../../assets/assets'
 import { useAppContext } from '../../context/AppContext'
@@ -6,7 +7,8 @@ import toast from 'react-hot-toast'
 
 const AddCar = () => {
 
-  const {axios, currency} = useAppContext()
+  const navigate = useNavigate()
+  const {axios, currency, fetchCars} = useAppContext()
 
   const [image, setImage] = useState(null)
   const [car, setCar] = useState({
@@ -55,6 +57,8 @@ const AddCar = () => {
           location: '',
           description: '',
         })
+        fetchCars()
+        navigate('/owner/manage-cars')
       }else{
         toast.error(data.message)
       }
