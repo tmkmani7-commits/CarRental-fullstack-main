@@ -5,16 +5,27 @@
 <h1>🚗 CAR RENTAL BOOKING SYSTEM :</h1>
 
 Badges
+
 Live Demo
+
 GitHub Repository
+
 Overview
+
 Features
+
 Screenshots
+
 Tech Stack
+
 Installation
+
 Folder Structure
+
 Future Enhancements
+
 Author
+
 License
 
 README.md
