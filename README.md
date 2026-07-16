@@ -2,31 +2,21 @@
 README structure
 <img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="https://github.com/user-attachments/assets/e48e8b69-3db4-40b4-b873-0e7458a5799d" />
 
-🚗 CAR RENTAL BOOKING SYSTEM :
+<h1>🚗 CAR RENTAL BOOKING SYSTEM :</h1>
 
 Badges
-
 Live Demo
-
 GitHub Repository
-
 Overview
-
 Features
-
 Screenshots
-
 Tech Stack
-
 Installation
-
 Folder Structure
-
 Future Enhancements
-
 Author
-
 License
+
 README.md
 <h1 align="center">🚗 Car Rental Booking System</h1>
 
