@@ -160,7 +160,7 @@ npm start
 
 # 👨‍💻 Author
 
-**Manikanta TMK**
+**Manikanta**
 
 GitHub
 
