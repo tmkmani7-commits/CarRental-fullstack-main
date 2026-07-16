@@ -1,7 +1,8 @@
-README structure
-📷 Banner Image
 
-🚗 Project Title
+README structure
+<img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="https://github.com/user-attachments/assets/e48e8b69-3db4-40b4-b873-0e7458a5799d" />
+
+🚗 CAR RENTAL BOOKING SYSTEM :
 
 Badges
 
