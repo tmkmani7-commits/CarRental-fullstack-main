@@ -92,21 +92,6 @@ The application allows customers to search, book and manage rental vehicles whil
 - View Bookings
 - Dashboard
 
----
-
-# 📸 Screenshots
-
-## Home Page
-
-![Home](images/homepage.png)
-
----
-
-## Hero Section
-
-![Hero](images/hero.png)
-
----
 
 # 🛠 Tech Stack
 
