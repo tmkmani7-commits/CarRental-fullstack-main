@@ -1,6 +1,6 @@
 
 
-<img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="https://github.com/user-attachments/assets/e48e8b69-3db4-40b4-b873-0e7458a5799d" />
+
 
 <h1>🚗 CAR RENTAL BOOKING SYSTEM :</h1>
 
@@ -32,7 +32,8 @@ README.md
 <h1 align="center">🚗 Car Rental Booking System</h1>
 
 <p align="center">
-  <img src="images/homepage.png" width="100%">
+  <img src="(https://github.com/user-attachments/assets/e48e8b69-3db4-40b4-b873-0e7458a5799d)" width="100%">
+  <img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="" />
 </p>
 
 <p align="center">
@@ -44,7 +45,7 @@ A Full Stack MERN Car Rental Platform for searching, booking and managing rental
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![NodeJS](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)
-![License](https://img.shields.io/badge/License-skillwall)
+
 
 </p>
 
