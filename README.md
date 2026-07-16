@@ -44,7 +44,7 @@ A Full Stack MERN Car Rental Platform for searching, booking and managing rental
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![NodeJS](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)
-![License](https://img.shields.io/badge/License-MIT-orange)
+![License](https://img.shields.io/badge/License-skillwall)
 
 </p>
 
