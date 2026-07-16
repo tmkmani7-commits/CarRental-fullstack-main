@@ -32,7 +32,8 @@ README.md
 <h1 align="center">🚗 Car Rental Booking System</h1>
 
 <p align="center">
-  <img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="(https://github.com/user-attachments/assets/e48e8b69-3db4-40b4-b873-0e7458a5799d)" />
+  <img width="1892" height="850" alt="Screenshot 2026-07-15 151448" src="https://github.com/user-attachments/assets/ced4f123-da0b-48dc-82aa-2ec4b23c0b9c" />
+
 </p>
 
 <p align="center">
